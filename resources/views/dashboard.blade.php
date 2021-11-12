@@ -9,10 +9,10 @@
 </head>
 
 <body>
-    <div>
+    <div class="box">
         <div class="buttons">
-        <a class="btn btn-primary" href="#" role="button" style="background-color: grey;">Registro</a>
-        <a class="btn btn-primary" href="#" role="button">Cerrar sesion</a>
+        <a class="btn btn-primary" href="" role="button" style="background-color: grey;">Registro</a>
+        <a class="btn btn-primary" href="" role="button" style="background-color: grey;">Cerrar sesion</a>
         </div>
         <div class="table">
             <div class="responsive-table" style="margin-left: 5%; margin-right: 5%;">

@@ -9,14 +9,22 @@
 </head>
 
 <body>
-    <div class="box">
-        <div class="buttons">
-        <a class="btn btn-primary" href="" role="button" style="background-color: grey;">Registro</a>
-        <a class="btn btn-primary" href="" role="button" style="background-color: grey;">Cerrar sesion</a>
+    <div>
+        <div class="container">
+            <div class="row">
+            <div class="col-6" style="margin-top: 5%; margin-bottom: 5%;" >
+                    <a class="btn btn-dark" href="" role="button" style="background-color: grey;">Registro</a>
+                    <a class="btn btn-dark" href="" role="button" style="background-color: grey;">Cerrar sesion</a>
+                </div>
+                <div class="col-6" style="text-align: center; margin-top:4%;">
+                    <div class="col-12"><h1>Usuario x bienvenido</h1></div>
+                </div>
+
+            </div>
         </div>
         <div class="table">
             <div class="responsive-table" style="margin-left: 5%; margin-right: 5%;">
-                <table class="table table-dark table-hover" >
+                <table class="table table-dark table-hover">
                     <thead>
                         <tr>
                             <th colspan="6" style="text-align: center; font-size:larger;"><u>Registro</u></th>

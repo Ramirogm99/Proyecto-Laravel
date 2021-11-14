@@ -7,14 +7,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title></title>
 </head>
-
+@include('')
 <body>
     <div>
         <div class="container">
             <div class="row">
             <div class="col-6" style="margin-top: 5%; margin-bottom: 5%;" >
-                    <a class="btn btn-dark" href="" role="button" style="background-color: grey;">Registro</a>
-                    <a class="btn btn-dark" href="" role="button" style="background-color: grey;">Cerrar sesion</a>
+                    <a class="btn btn-dark" href="registro.php" role="button" style="background-color: grey;">Registro</a>
+                    <a class="btn btn-dark" href="/" role="button" style="background-color: grey;">Cerrar sesion</a>
                 </div>
                 <div class="col-6" style="text-align: center; margin-top:4%;">
                     <div class="col-12"><h1>Usuario x bienvenido</h1></div>

@@ -5,19 +5,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title></title>
+    <title>Inicio</title>
 </head>
-@include('')
 <body>
+    @if(Auth::check())
     <div>
         <div class="container">
             <div class="row">
-            <div class="col-6" style="margin-top: 5%; margin-bottom: 5%;" >
+                <div class="col-6" style="margin-top: 5%; margin-bottom: 5%;">
                     <a class="btn btn-dark" href="registro.php" role="button" style="background-color: grey;">Registro</a>
                     <a class="btn btn-dark" href="/" role="button" style="background-color: grey;">Cerrar sesion</a>
                 </div>
                 <div class="col-6" style="text-align: center; margin-top:4%;">
-                    <div class="col-12"><h1>Usuario x bienvenido</h1></div>
+                    <div class="col-12">
+                        <h1>Usuario x bienvenido</h1>
+                    </div>
                 </div>
 
             </div>
@@ -92,6 +94,11 @@
             </div>
         </div>
     </div>
+    @else
+    <h1>Por favor inicie sesion</h1>
+    <a class="text-blue-500 hover:text-blue-800" href="{{ route('index')}}">Iniciar sesion</a>
 </body>
+
+
 
 </html>

@@ -12,5 +12,5 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::view('/', 'index')->name('index');
-Route::view('dashboard', 'dashboard')->name('dashboard');
+Route::get('/', function () { return view('login');});
+Route::get('/inicio', function () { return view('dashboard');});

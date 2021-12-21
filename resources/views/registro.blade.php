@@ -7,15 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Registro</title>
+    <link href="{{ asset('css/indexstyle.css')}}" rel="stylesheet" type="text/css">
 </head>
 
-<header>
-
-</header>
 
 <body>
-    @if(Auth::check())
+        <header>
+        <div class="cabecera">
+            <h1>REGISTRO</h1>
+        </div>
+        </header>
+    
     <div class="container">
+        
+
         <div class="row">
             <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center align-items-center">
                 <div class="dropdown">
@@ -116,13 +121,13 @@
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    @else
-    <h1>Por favor inicie sesion</h1>
-    <a class="text-blue-500 hover:text-blue-800" href="{{ route('index')}}">Iniciar sesion</a>
+   
 </body>
 
 <footer>
-
-</footer>
+        <div class="piedepagina">
+            <h1>footer</h1>
+        </div>
+    </footer>
 
 </html>

@@ -15,3 +15,5 @@ php artisan make:fatory CentroFactory --model:modelCentro
 use App\Models\modelCentro
 
 protected $model = modelCentro::class
+
+php artisan migrate:refresh --seed

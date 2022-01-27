@@ -3,9 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\modelCentro;
+use App\Models\Usuario;
 
-class modelCentroSeeder extends Seeder
+class UsuarioSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +14,6 @@ class modelCentroSeeder extends Seeder
      */
     public function run()
     {
-        modelCentro::factory()->times(48)->create();
+        Usuario::factory()->times(48)->create();
     }
 }

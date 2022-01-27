@@ -3,12 +3,11 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\Centro;
+use App\Models\Usuario;
 
-
-class CentroFactory extends Factory
+class UsuarioFactory extends Factory
 {
-    protected $model = Centro::class;
+    protected $model = Usuario::class;
 
     /**
      * Define the model's default state.
@@ -19,6 +18,7 @@ class CentroFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
+            'surname' => $this->faker->name(),
         ];
     }
 }

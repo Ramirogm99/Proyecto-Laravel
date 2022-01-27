@@ -21,21 +21,12 @@ class Centro extends Model
         return Centro::all();
     }
 
-    public function updateCentro($id, $array){
-
-        $Centro = Centro::find($id);
-
-        $Centro = $array;
-
-        $Centro -> save();
-
-    }
-
     public static function insert(array $array){
 
         $centro = Centro::create([
             'name' => $array['name']
         ]);
+        $centro -> save();
        
     }
 

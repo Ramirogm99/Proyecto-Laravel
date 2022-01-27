@@ -10,5 +10,33 @@ class Usuario extends Model
     use HasFactory;
     protected $table = "users";
     protected $primaryKey = 'id';
-    protected $fillable = ['name','surname'];
+    protected $fillable = ['name', 'surname'];
+
+    public static function findById($id)
+    {
+        return Usuario::find($id);
+    }
+
+    public static function findAll()
+    {
+        return Usuario::all();
+    }
+
+    public static function insert(array $array)
+    {
+
+        $Usuario = Usuario::create([
+            'name' => $array['name'],
+            'surname' =>$array['surname']
+        ]);
+        $Usuario -> save();
+    }
+
+    public function deleteUsuario($id)
+    {
+
+        $Usuario = Usuario::find($id);
+
+        $Usuario->delete();
+    }
 }

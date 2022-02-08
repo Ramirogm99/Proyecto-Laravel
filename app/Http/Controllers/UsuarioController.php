@@ -1,11 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Usuario;
 use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
 {
+    protected $usuarioModel;
+
+    public function __construct(Usuario $usuario){
+        $this->usuarioModel = $usuario;
+        
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,54 +20,43 @@ class UsuarioController extends Controller
     public function index()
     {
         //
-        $usuarios = $this -> usuarioModel-> 
+        $usuario = $this -> usuario->mostrarTodo();
+        return view('dashboard',['usuarios'=>$usuario]);
     }
-
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Saca todos los usuarios
+     * 
      */
-    public function create()
+    public function mostrarTodo()
     {
-        //
+        $usuario = $this->usuario->findAll();
+        return $usuario;
     }
-
     /**
-     * Store a newly created resource in storage.
+     * Saca el usuario del id especifico
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param [type] $id
+     * @return void
      */
-    public function store(Request $request)
-    {
-        //
+    public function mostrarUsuario($id){
+        $usuario = $this->usuario->find(['id'=>$id]);
+        return $usuario;
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
+     * te devuevle una vista para poder editar el usuario
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+    public function editarUsuario($id)
+    {   
+        $usuario = $this->usuario->mostrarUsuario($id);
+        return view('usuario.editar',['usuario'=>$usuario], ['id' => $id]);
     }
 
     /**
-     * Update the specified resource in storage.
+     * actualiza y te manda a la accion del usuario
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -69,7 +64,10 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $usuario = $this->usuarioModel::mostrarUsuario($id);
+        $usuario->fill($request->all());
+        $usuario->save();
+        return redirect()->action([UsuarioController::class,'index']);
     }
 
     /**
@@ -80,6 +78,8 @@ class UsuarioController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $usuario = $this->usuarioModel::find($id);
+        $usuario = $this->usuario->findBy(['id'=>$id]);
+        $usuario->delete();
     }
 }

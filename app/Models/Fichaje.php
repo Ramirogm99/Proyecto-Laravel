@@ -17,9 +17,10 @@ class Fichaje extends Model
         return Fichaje::find($id);
     }
 
-    public static function findAll()
-    {
-        return Fichaje::all();
+    public static function findAll($userId)
+    { 
+        $fichaje = Fichaje::table('file_in')->where('user_id', $userId);
+        return $fichaje;
     }
 
     public static function insert(array $array)

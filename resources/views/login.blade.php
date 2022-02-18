@@ -1,16 +1,7 @@
-<html>
-<link href="{{ asset('css/indexstyle.css')}}" rel="stylesheet" type="text/css">
-<body>
-<div class="contenedor">
+@extends('layout')
 
-    <header>
-        <div class="cabecera">
-            <h1>Inicio de sesión</h1>
-        </div>
-    </header>
-
-    
-    <main>
+@section('contenido')
+        <!-- Contenido -->
         <div class="login_box">
             <div id="box_content">
                 <h2 class="active"> Log In </h2>
@@ -21,13 +12,4 @@
                 </form>
             </div>
         </div>
-    </main>
-
-    <footer>
-        <div class="piedepagina">
-            <h1>footer</h1>
-        </div>
-    </footer>
-</div>
-</body>
-</html>
+@endsection

@@ -17,10 +17,9 @@ class Fichaje extends Model
         return Fichaje::find($id);
     }
 
-    public static function findAll($userId)
-    { 
-        $fichaje = Fichaje::table('file_in')->where('user_id', $userId);
-        return $fichaje;
+    public static function findAll()
+    {
+        return Fichaje::all();
     }
 
     public static function insert(array $array)
@@ -35,7 +34,7 @@ class Fichaje extends Model
         $Fichaje -> save(); 
     }
 
-    public function deleteFichaje($id)
+    public static function deleteFichaje($id)
     {
 
         $Fichaje = Fichaje::find($id);

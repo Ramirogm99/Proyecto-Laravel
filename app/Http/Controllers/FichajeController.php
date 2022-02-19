@@ -12,14 +12,16 @@ class FichajeController extends Controller
      */
     public function fichar($worplace_id)
     {
+        $name = '';
         $user_id = $_SESSION["user_id"];
-        $fichaje = Fichaje::select("SELECT * FROM file_in WHERE user_id = $user_id ORDER BY id DESC LIMIT 1");
+        $fichaje = Fichaje::select("SELECT file_in.* , name , users.id FROM file_in , users WHERE user_id =  ORDER BY file_in.id DESC LIMIT 1");
         $fechaActual = date("Y-m-d H:i:s");
 
         if (isset($fichaje->departure_date) && is_null($fichaje->departure_date)) { // Entrada
             $fichaje = array(
                 'entry_date' => $fechaActual,
                 'user_id' => $user_id,
+                'name' => $name ,
                 'workplace_id' => $worplace_id
             );
 

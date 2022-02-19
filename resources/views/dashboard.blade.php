@@ -28,55 +28,6 @@
                             <td style="width: 20%">Hora entrada</td>
                             <td style="width: 20%">Hora salida</td>
                             <td style="width: 10%">Centro</td>
-                            <td style="width: 10%">Fecha</td>
-                        </tr>
-                        <tr>
-                            <td style="width: 20%">Nombre</td>
-                            <td style="width: 20%">apellido</td>
-                            <td style="width: 20%">Hora entrada</td>
-                            <td style="width: 20%">Hora salida</td>
-                            <td style="width: 10%">Centro</td>
-                            <td style="width: 10%">Fecha</td>
-                        </tr>
-                        <tr>
-                            <td style="width: 20%">Nombre</td>
-                            <td style="width: 20%">apellido</td>
-                            <td style="width: 20%">Hora entrada</td>
-                            <td style="width: 20%">Hora salida</td>
-                            <td style="width: 10%">Centro</td>
-                            <td style="width: 10%">Fecha</td>
-                        </tr>
-                        <tr>
-                            <td style="width: 20%">Nombre</td>
-                            <td style="width: 20%">apellido</td>
-                            <td style="width: 20%">Hora entrada</td>
-                            <td style="width: 20%">Hora salida</td>
-                            <td style="width: 10%">Centro</td>
-                            <td style="width: 10%">Fecha</td>
-                        </tr>
-                        <tr>
-                            <td style="width: 20%">Nombre</td>
-                            <td style="width: 20%">apellido</td>
-                            <td style="width: 20%">Hora entrada</td>
-                            <td style="width: 20%">Hora salida</td>
-                            <td style="width: 10%">Centro</td>
-                            <td style="width: 10%">Fecha</td>
-                        </tr>
-                        <tr>
-                            <td style="width: 20%">Nombre</td>
-                            <td style="width: 20%">apellido</td>
-                            <td style="width: 20%">Hora entrada</td>
-                            <td style="width: 20%">Hora salida</td>
-                            <td style="width: 10%">Centro</td>
-                            <td style="width: 10%">Fecha</td>
-                        </tr>
-                        <tr>
-                            <td style="width: 20%">Nombre</td>
-                            <td style="width: 20%">apellido</td>
-                            <td style="width: 20%">Hora entrada</td>
-                            <td style="width: 20%">Hora salida</td>
-                            <td style="width: 10%">Centro</td>
-                            <td style="width: 10%">Fecha</td>
                         </tr>
                     </tbody>
                 </table>

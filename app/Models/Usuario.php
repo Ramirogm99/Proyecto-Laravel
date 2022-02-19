@@ -27,7 +27,7 @@ class Usuario extends Model
 
         $Usuario = Usuario::create([
             'name' => $array['name'],
-            'surname' =>$array['surname']
+            'surname' =>$array['surname'],
         ]);
         $Usuario -> save();
     }

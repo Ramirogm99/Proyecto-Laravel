@@ -6,8 +6,8 @@
         
             <div class="row">
                 <div class="posicion-btn" style="margin-top: 5%; margin-bottom: 5%;">
-                    <a class="btn-dark" href="/Proyecto-Laravel/public/historial" role="button" >Registro</a>
-                    <a class="btn-dark" href="/Proyecto-Laravel/public/" role="button">Cerrar sesion</a>
+                    <a class="btn-dark" href="/historial" role="button" >Registro</a>
+                    <a class="btn-dark" href="/public" role="button">Cerrar sesion</a>
                 </div>
                 <div class="titulo-bienvenida">
                     <h1>Usuario x bienvenido</h1>

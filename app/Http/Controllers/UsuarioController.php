@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\DashboardController;
-use Illuminate\Support\Facades\DB;
+use App\Models\Usuario;
 
 class UsuarioController extends Controller
 {
@@ -14,7 +14,7 @@ class UsuarioController extends Controller
      */
     public function guardarUsuario($datosUsuario)
     {
-        DB::table('users')->where('id', $datosUsuario->id)->update(['name' => $datosUsuario->name, 'surname' => $datosUsuario->surname]);
+        Usuario::table('users')->where('id', $datosUsuario->id)->update(['name' => $datosUsuario->name, 'surname' => $datosUsuario->surname]);
         return DashboardController::index($datosUsuario->id);
     }
 

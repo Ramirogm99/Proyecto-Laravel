@@ -5,14 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Fichaje;
+use App\Models\Usuario;
 
 class DashboardController extends Controller
 {
+    
     /**
      * Devuelve los los últimos 5 registros de los fichajes del usuario
      */
     public static function index()
     {
+        
         $user_id = $_SESSION["user_id"];
         $usuarios = Fichaje::select("SELECT * FROM file_in WHERE user_id = $user_id ORDER BY entry_date DESC LIMIT 5");
         return $usuarios;
@@ -24,7 +27,7 @@ class DashboardController extends Controller
     public function datosUsuario()
     {
         $user_id = $_SESSION["user_id"];
-        $usuario = DB::table('users')->where('id', '=', $user_id);
+        $usuario = Usuario::table('users')->where('id', '=', $user_id);
         return view('usuario', ['usuario' => $usuario]);
     }
 
@@ -33,7 +36,7 @@ class DashboardController extends Controller
      */
     public function fichar()
     {
-        $centros = DB::table('workplaces')->select('name');
+        $centros = Usuario::table('workplaces')->select('name');
         return view('fichar', ['centros' => $centros]);
     }
 

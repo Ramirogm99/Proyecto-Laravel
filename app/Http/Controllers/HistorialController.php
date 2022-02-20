@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Fichaje;
 use App\Http\Controllers\DashboardController;
 
+
 class HistorialController extends Controller
 {
     /**
@@ -13,6 +14,7 @@ class HistorialController extends Controller
      */
     public function index()
     {
+        session_start();
         $user_id = $_SESSION["user_id"];
         $historial = Fichaje::table('file_in')->where('user_id', '=', $user_id)->take(20)->get();
         return view('historial', ['historial' => $historial]);

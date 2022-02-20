@@ -22,13 +22,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td style="width: 20%">Nombre</td>
-                            <td style="width: 20%">apellido</td>
-                            <td style="width: 20%">Hora entrada</td>
-                            <td style="width: 20%">Hora salida</td>
-                            <td style="width: 10%">Centro</td>
-                        </tr>
+                        @foreach ($historial as $item)
+                                <tr>
+                                    <td>@php($item[id])</td>
+                                    <td>@php($item[entry_date])</td>
+                                    <td>@php($item[departure_date])</td>
+                                    <td>@php($item[user_id])</td>
+                                    <td>@php($item[workplace_id])</td>
+                                </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

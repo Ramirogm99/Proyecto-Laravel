@@ -21,7 +21,7 @@ class controladorFichajes extends Controller
 
     public function edit($id){
 
-        $fichaje = $this->ModelsFichaje->findById($id);
+        $fichaje = $this->ModelsFichaje->find($id);
         return view('Fichajes.editar', ['fichaje' => $fichaje], ['id' => $id]);
 
     }

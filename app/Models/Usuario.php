@@ -10,7 +10,7 @@ class Usuario extends Model
     use HasFactory;
     protected $table = "users";
     protected $primaryKey = 'id';
-    protected $fillable = ['name', 'surname'];
+    protected $fillable = ['name', 'surname', 'email'];
 
     public static function findById($id)
     {
@@ -28,6 +28,7 @@ class Usuario extends Model
         $Usuario = Usuario::create([
             'name' => $array['name'],
             'surname' =>$array['surname'],
+            'email' => $array['email']
         ]);
         $Usuario -> save();
     }

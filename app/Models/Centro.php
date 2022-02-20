@@ -10,7 +10,7 @@ class Centro extends Model
     use HasFactory;
     protected $table = "workplaces";
     protected $primaryKey = 'id';
-    protected $fillable = ['name'];
+    protected $fillable = ['workplace_name'];
 
 
     public static function findById($id){
@@ -24,7 +24,7 @@ class Centro extends Model
     public static function insert(array $array){
 
         $centro = Centro::create([
-            'name' => $array['name']
+            'workplace_name' => $array['workplace_name']
         ]);
         $centro -> save();
        

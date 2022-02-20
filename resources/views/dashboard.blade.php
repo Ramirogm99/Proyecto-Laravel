@@ -10,7 +10,7 @@
                     <a class="btn-dark" href="/" role="button">Cerrar sesion</a>
                 </div>
                 <div class="titulo-bienvenida">
-                    <h1>Usuario x bienvenido</h1>
+                    <h1>{{$user_name}} , bienvenido</h1>
                 </div>
             </div>
         </div>
@@ -20,15 +20,20 @@
                         <tr>
                             <th colspan="6"><u>Registro</u></th>
                         </tr>
+                        <tr>
+                            <th>Usuario</th>
+                            <th>Centro</th>
+                            <th>Hora entrada</th>
+                            <th>Hora salida</th>
+                        </tr>
                     </thead>
                     <tbody>
-                        @foreach ($yikes as $item)
+                        @foreach ($fichajes as $item)
                                 <tr>
-                                    <td>@php($item[id])</td>
-                                    <td>@php($item[entry_date])</td>
-                                    <td>@php($item[departure_date])</td>
-                                    <td>@php($item[user_id])</td>
-                                    <td>@php($item[workplace_id])</td>
+                                    <td>{{$item->name}}</td>
+                                    <td>{{$item->workplace_name}}</td>
+                                    <td>{{$item->entry_date}}</td>
+                                    <td>{{$item->departure_date}}</td>
                                 </tr>
                         @endforeach
                     </tbody>

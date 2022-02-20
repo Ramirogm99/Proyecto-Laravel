@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Usuario;
+use Illuminate\Support\Facades\DB;
 
 class LoginController extends Controller
 {
@@ -20,16 +21,17 @@ class LoginController extends Controller
      */
     public function comprobarUsuarioRegistrado(Request $request)
     {
-        $usuarios = Usuario::findAll();
-        foreach ($usuarios as $usuario) {
-            if ($usuario->email == $request->email && $usuario->password == $request->password) {
+        $usuario = DB::table("users")->where('email', $request->email && 'password', $request->password)->first(['id','name']);
+        //foreach ($usuarios as $usuario) {
+            if (/*$usuario->email == $request->email && $usuario->password == $request->password*/ isset($usuario)) {
                 session_start();
                 $_SESSION["logged"] = true;
                 $_SESSION["user_id"] = $usuario->id;
-                return view('dashboard', ['nombre' => $usuario->name]);
+                $_SESSION["user_name"]=$usuario->name;
+                return redirect()->route('dashboard');
             } else {
-                return view('login');
+                return redirect()->route('login');
             }
-        }
+       // }
     }
 }

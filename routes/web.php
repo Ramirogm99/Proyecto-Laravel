@@ -17,7 +17,9 @@ use App\Http\Controllers\LoginController;
 */
 
 Route::get('/', [LoginController::class, 'index'])->name('login');
-Route::post('/inicio',  [LoginController::class, 'comprobarUsuarioRegistrado' ]);
+Route::post('/inicio',  [LoginController::class, 'comprobarUsuarioRegistrado' ])->name('login.comprobarUsuario');
+Route::get('/dashboard', [DashboardController::class , 'index'])->name('dashboard');
 Route::get('/historial', function () {
     return view('registro');
 });
+

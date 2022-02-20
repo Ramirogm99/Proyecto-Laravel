@@ -15,10 +15,20 @@ class DashboardController extends Controller
      */
     public static function index()
     {
-        
+        session_start();
         $user_id = $_SESSION["user_id"];
-        $usuarios = Fichaje::select("SELECT * FROM file_in WHERE user_id = $user_id ORDER BY entry_date DESC LIMIT 5");
-        return $usuarios;
+        
+        //$usuarios = Fichaje::join('users','users.user_id', '=' ,'file_in.user_id')->where('user_id', $user_id)->orderByDesc("entry_date")->take(5)->get(['users.id','workplaces.id','entry_date','departure_date']);
+        $fichajes = DB::table('file_in')
+            ->join('users', 'file_in.user_id', '=', 'users.id')
+            ->join('workplaces', 'file_in.workplace_id', '=', 'workplaces.id')
+            ->select('users.name', 'workplaces.workplace_name','file_in.entry_date','file_in.departure_date')
+            ->where('file_in.user_id', $user_id)
+            ->orderByDesc("file_in.entry_date")
+            ->take(5)
+            ->get();
+            
+        return view('dashboard', ['fichajes'=>$fichajes], ['user_name'=>$_SESSION['user_name']]);
     }
 
     /**

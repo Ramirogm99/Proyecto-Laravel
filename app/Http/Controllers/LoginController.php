@@ -21,13 +21,13 @@ class LoginController extends Controller
      */
     public function comprobarUsuarioRegistrado(Request $request)
     {
-        $usuario = DB::table("users")->where('email', $request->email && 'password', $request->password)->first(['id','name']);
+        $usuario = DB::table("users")->where('email', $request->email)->where('password', $request->password)->first(['id','user']);
         //foreach ($usuarios as $usuario) {
             if (/*$usuario->email == $request->email && $usuario->password == $request->password*/ isset($usuario)) {
                 session_start();
                 $_SESSION["logged"] = true;
                 $_SESSION["user_id"] = $usuario->id;
-                $_SESSION["user_name"]=$usuario->name;
+                $_SESSION["user_name"]=$usuario->user;
                 return redirect()->route('dashboard');
             } else {
                 return redirect()->route('login');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Fichaje;
 use App\Http\Controllers\DashboardController;
+use Illuminate\Support\Facades\DB;
 
 
 class HistorialController extends Controller
@@ -16,8 +17,17 @@ class HistorialController extends Controller
     {
         session_start();
         $user_id = $_SESSION["user_id"];
-        $historial = Fichaje::table('file_in')->where('user_id', '=', $user_id)->take(20)->get();
-        return view('historial', ['historial' => $historial]);
+        
+        $fichajes = DB::table('file_in')
+            ->join('users', 'file_in.user_id', '=', 'users.id')
+            ->join('workplaces', 'file_in.workplace_id', '=', 'workplaces.id')
+            ->select('users.user', 'workplaces.name','file_in.entry_date','file_in.departure_date')
+            ->where('file_in.user_id', $user_id)
+            ->orderByDesc("file_in.entry_date")
+            ->take(20)
+            ->get();
+    
+        return view('registro', ['fichajes'=>$fichajes]);
     }
 
     /**
@@ -48,7 +58,6 @@ class HistorialController extends Controller
      */
     public function volver()
     {
-        $user_id = $_SESSION["user_id"];
-        return DashboardController::index($user_id);
+        return redirect()->route('dashboard');
     }
 }

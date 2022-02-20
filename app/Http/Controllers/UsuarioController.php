@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\DashboardController;
-use App\Models\Usuario;
+use Illuminate\Support\Facades\DB;
 
 class UsuarioController extends Controller
 {
@@ -12,17 +12,20 @@ class UsuarioController extends Controller
      * Actualiza los datos del usuario en la base de datos
      * Devuelve el método "index($user_id)" del dashboard
      */
+
     public function guardarUsuario($datosUsuario)
     {
-        Usuario::table('users')->where('id', $datosUsuario->id)->update(['name' => $datosUsuario->name, 'surname' => $datosUsuario->surname]);
+        session_start();
+        DB::table('users')->where('id', $_SESSION["user_id"])->update(['user' => $datosUsuario->user]);
         return DashboardController::index($datosUsuario->id);
     }
 
     /**
      * Devuelve el método "index($user_id)" del dashboard
      */
-    public function volver($user_id)
+
+    public function volver()
     {
-        return DashboardController::index($user_id);
+        return redirect()->route('dashboard');
     }
 }

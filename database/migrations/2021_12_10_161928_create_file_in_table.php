@@ -20,8 +20,8 @@ class CreateFileInTable extends Migration
             $table->unsignedInteger("workplace_id");
             $table->foreign("user_id")->references('id')->on('users')->onDelete("cascade")->onUpdate("cascade");
             $table->foreign("workplace_id")->references('id')->on('workplaces')->onDelete("cascade")->onUpdate("cascade");
-            $table->datetime("entry_date");
-            $table->datetime("departure_date");
+            $table->string("entry_date");
+            $table->string("departure_date");
             $table->timestamps();
         });
     }

@@ -18,11 +18,11 @@ class LoginController extends Controller
     /**
      * Comprueba si el usuario está registrado en la base de datos
      */
-    public function comprobarUsuarioRegistrado($email, $password)
+    public function comprobarUsuarioRegistrado(Request $request)
     {
         $usuarios = Usuario::findAll();
         foreach ($usuarios as $usuario) {
-            if ($usuario->email == $email && $usuario->password == $password) {
+            if ($usuario->email == $request->email && $usuario->password == $request->password) {
                 session_start();
                 $_SESSION["logged"] = true;
                 $_SESSION["user_id"] = $usuario->id;

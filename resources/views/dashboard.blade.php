@@ -22,7 +22,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($historial as $item)
+                        @foreach ($yikes as $item)
                                 <tr>
                                     <td>@php($item[id])</td>
                                     <td>@php($item[entry_date])</td>

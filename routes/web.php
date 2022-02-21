@@ -23,8 +23,10 @@ Route::post('/inicio', [LoginController::class, 'comprobarUsuarioRegistrado'])->
 
 Route::get('/dashboard', [DashboardController::class , 'index'])->name('dashboard');
 
-Route::get('/historial', [HistorialController::class , 'index'])->name('historial');
+Route::get('/fichar', [FichajeController::class, 'index'])->name('crear.fichaje');
 
-Route::get('/fichar', [FichajeController::class, 'fichar'])->name('fichar');
+Route::put('/fichar', [FichajeController::class, 'fichar'])->name('fichar');
 
 Route::get('/salir', [DashboardController::class, 'LogOut'])->name('logout');
+
+Route::get('/historial', [HistorialController::class , 'index'])->name('registro');

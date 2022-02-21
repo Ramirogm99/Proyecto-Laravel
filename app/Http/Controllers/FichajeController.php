@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\DB;
 
 class FichajeController extends Controller
 {
+    public static function index()
+    {
+        return view('fichaje');
+    }
+    
     /**
      * Comprueba si el usuario ha fichado y dependiendo de esto se crea un registro o se actualiza el mismo
      */
@@ -19,26 +24,27 @@ class FichajeController extends Controller
 
         $user_id = $_SESSION["user_id"];
         //$fichaje = Fichaje::select("SELECT file_in.* , name , users.id FROM file_in , users WHERE user_id =  ORDER BY file_in.id DESC LIMIT 1");
-        $fichaje = DB::table("file_in")
+        $fichajes = DB::table("file_in")
             ->where('user_id', $user_id)
             ->orderByDesc('user_id')
             ->first(['entry_date', 'departure_date']);
 
         $fechaActual = date("Y-m-d H:i:s");
-
-        if (/*isset($fichaje->departure_date) && is_null($fichaje->departure_date)*/ isset($fichaje->departure_date) && $fichaje->departure_date != "") { // Entrada
-            $fichaje = array(
+        if (empty($fichajes->entry_date)) { // Entrada
+            $fichajes = array(
                 'entry_date' => $fechaActual,
                 'departure_date' => "",
                 'user_id' => $user_id,
                 'workplace_id' => $workplace_id
             );
-            DB::table('file_in')->insert($fichaje);
+            DB::table('file_in')->insert($fichajes);
 
         } else { // Salida
-            $fichaje->departure_date = $fechaActual;
-            $fichaje->save();
+            $fichajes=Fichaje::find($user_id);
+            $fichajes->departure_date = $fechaActual;
+            $fichajes->save();
         }
+        return redirect()->route('registro');
     }
 
     /**

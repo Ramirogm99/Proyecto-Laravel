@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="posicion-btn" style="margin-top: 5%; margin-bottom: 5%;">
                     <a class="btn-dark" href="/historial" role="button" >Registro</a>
-                    <a class="btn-dark" href="/salir" role="button">Cerrar sesion</a>
+                    <a class="btn-dark" href="{{ route('logout')}}" role="button">Cerrar sesion</a>
                 </div>
                 <div class="titulo-bienvenida">
                     <h1>{{$user_name}} , bienvenido</h1>

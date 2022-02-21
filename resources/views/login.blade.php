@@ -6,10 +6,10 @@
             
             <div id="box_content">
                 <h2 class="active"> Log In </h2>
-                <form action = "{{ route('login.comprobarUsuario') }}" method="POST">
+                <form action = "{{ route('login.comprobarUsuario') }}" method="post">
                     @csrf
-                    <input type="email" id="email" class="fadeIn second" name="login" placeholder="email" required>
-                    <input type="password" id="password" class="fadeIn third" name="login" placeholder="password" required>
+                    <input type="email" id="email" class="fadeIn second" name="email" placeholder="email" required>
+                    <input type="password" id="password" class="fadeIn third" name="password" placeholder="password" required>
                     <input type="submit" value="Log In">
                 </form>
             </div>

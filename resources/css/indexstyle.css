@@ -78,8 +78,8 @@ footer .piedepagina{
 	background-attachment: fixed;
 	overflow: hidden;
 	border-radius: 85% 85% 0 0 / 30%;
-	position: fixed;
 	bottom: 0px;
+  position: absolute;
 }
 
 footer h1{

@@ -62,7 +62,7 @@ header{
 	overflow: hidden;
 	border-radius: 0 0 85% 85% / 30%;
 	background: 
-		linear-gradient(rgba(0,0,0,.57), rgba(0,0,0,.57)),
+		linear-gradient(rgba(0,0,0,.43), rgba(0,0,0,.43)),
 		url(https://image.shutterstock.com/image-vector/vector-black-geometric-background-design-260nw-1223389576.jpg) no-repeat center,
 		linear-gradient(#222222, #CBCBA9);
 	background-size: cover;
@@ -89,12 +89,12 @@ footer .piedepagina{
 	background-attachment: fixed;
 	overflow: hidden;
 	border-radius: 85% 85% 0 0 / 30%;
-	position: fixed;
 	bottom: 0px;
 }
 
 footer h1{
 	font-family: 'Road Rage', sans-serif;
+  font-weight: lighter;
 	font-size: 20px;
 	height: 30px;
 	color: #FFF;
@@ -159,7 +159,7 @@ input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
 }
 
 
-input[type=password], input[type=email]{
+input[type=password], input[type=email], input[type=text]{
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;

@@ -5,16 +5,18 @@
         <div class="container">
         
             <div class="row">
-                <div class="posicion-btn" style="margin-top: 5%; margin-bottom: 5%;">
+                <div class="posicion-btn" style="margin-top: 2%; margin-bottom: 2%;">
                     <a class="btn-dark" href="{{ route('registro') }}" role="button" >Registro</a>
                     <a class="btn-dark" href="{{ route('crear.fichaje') }}" role="button">Fichar</a>
+                    <a class="btn-dark" href="{{ route('usuario.edit')}}" role="button">Usuario</a>
                     <a class="btn-dark" href="{{ route('logout') }}" role="button">Cerrar sesion</a>
                 </div>
                 <div class="titulo-bienvenida">
-                    <h1>{{$user_name}} , bienvenido</h1>
+                    <h1>¡Bienvenido {{$user_name}}!</h1>
                 </div>
             </div>
         </div>
+
         <div class="table">
                 <table class="table table-dark table-hover">
                     <thead>

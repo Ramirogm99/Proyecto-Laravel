@@ -23,7 +23,7 @@ class LoginController extends Controller
     {
         $usuario = DB::table('users')->where('email', $request->email)->where('password', $request->password)->first(['id','user']);
         //foreach ($usuarios as $usuario) {
-            if (/*$usuario->email == $request->email && $usuario->password == $request->password*/ isset($usuario)) {
+            if (isset($usuario)) {
                 
                 session_start();
                 $_SESSION["logged"] = true;

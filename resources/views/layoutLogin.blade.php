@@ -17,12 +17,5 @@
     <main>
     @yield('contenido')@section('contenido')
     </main>
-
-    <footer>
-        <div class="piedepagina">
-            <h1>© PROYECTO LARAVEL</br>Jesus Brañas, Ramiro Lopez, Alejandro Modelo y Jose Alberto Zurera</h1>
-            <br>
-        </div>
-    </footer>
 </body>
 </html>

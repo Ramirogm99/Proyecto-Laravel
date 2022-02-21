@@ -27,7 +27,7 @@ class DashboardController extends Controller
             ->take(5)
             ->get();
             
-        return view('dashboard', ['fichajes'=>$fichajes], ['user_name'=>$_SESSION['user_name']]);
+        return view('dashboard', ['fichajes'=>$fichajes], ['user_name'=>$_SESSION['user_name'], 'user_id'=>$_SESSION['user_id']]);
     }
 
     /**

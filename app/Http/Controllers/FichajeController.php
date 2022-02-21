@@ -46,6 +46,7 @@ class FichajeController extends Controller
      */
     public function volver()
     {
+        
         return redirect()->route('dashboard');
     }
 }

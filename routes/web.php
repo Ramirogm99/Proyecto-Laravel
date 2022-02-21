@@ -18,8 +18,13 @@ use App\Http\Controllers\FichajeController;
 */
 
 Route::get('/', [LoginController::class, 'index'])->name('login');
-Route::post('/inicio',  [LoginController::class, 'comprobarUsuarioRegistrado' ])->name('login.comprobarUsuario');
+
+Route::post('/inicio', [LoginController::class, 'comprobarUsuarioRegistrado'])->name('login.comprobarUsuario');
+
 Route::get('/dashboard', [DashboardController::class , 'index'])->name('dashboard');
+
 Route::get('/historial', [HistorialController::class , 'index'])->name('historial');
+
 Route::get('/fichar', [FichajeController::class, 'fichar'])->name('fichar');
+
 Route::get('/salir', [DashboardController::class, 'LogOut'])->name('logout');

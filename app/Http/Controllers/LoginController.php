@@ -30,7 +30,7 @@ class LoginController extends Controller
                 $_SESSION["user_name"]=$usuario->user;
                 return redirect()->route('dashboard');
             } else {
-                return redirect()->route('login');
+                return redirect()->route('login')->with('Success', 'Centro eliminado correctamente');
             }
        // }
     }

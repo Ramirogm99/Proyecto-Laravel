@@ -27,7 +27,7 @@ class DashboardController extends Controller
             ->take(5)
             ->get();
             
-        return view('dashboard', ['fichajes'=>$fichajes], ['user_name'=>$_SESSION['user_name'], 'user_id'=>$_SESSION['user_id']]);
+        return view('dashboard', ['fichajes'=>$fichajes], ['user_name'=>$_SESSION['user_name']],['user_id'=>$_SESSION['user_id']]);
     }
 
     /**
@@ -46,8 +46,26 @@ class DashboardController extends Controller
      */
     public function fichar()
     {
-        $centros = DB::table('workplaces')->select('name');
-        return view('fichar', ['centros' => $centros]);
+        session_start();
+
+        $user_id = $_SESSION["user_id"];
+        //$fichaje = Fichaje::select("SELECT file_in.* , name , users.id FROM file_in , users WHERE user_id =  ORDER BY file_in.id DESC LIMIT 1");
+        $fichaje = DB::table("file_in")
+            ->where('user_id', $user_id)
+            ->orderByDesc('id')
+            ->first(['departure_date']);
+
+            if ($fichaje->departure_date != "" && isset($fichaje->departure_date)) { 
+            $_SESSION["state"]=1//toca salir
+            ;   
+
+            } else { // Salida
+                $_SESSION["state"]=0;//toca entrar
+            }
+
+        
+        $centros = DB::table('workplaces')->select(['name','id'])->get();
+        return view('fichaje', ['centros' => $centros], ['state' => $_SESSION["state"]]);
     }
 
     /**

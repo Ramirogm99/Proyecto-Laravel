@@ -13,19 +13,23 @@
     <div class="contenedor-fichaje">
         <div class="container">
             <div class="row">
+                
                     <div class="dropdown">
-                        <h1>Selecciona centro:</h1>
+                        
                         <form action="{{ route('fichar') }}" method="post">
                             @csrf
-                            @method('PUT')
+                            @if($state === 1)
+                            <h1>Selecciona centro:</h1>
                             <select name="centro_id" id="centro_id">
-                                <option value="1">MEDAC</option>
-                                <option value="2">MERCADONA</option>
-                                <option value="3">EL CORTE INGLÉS</option>
+                                @foreach ($centros as $item)
+                                    <option value={{$item->id}}>{{$item->name}}</option>
+                                @endforeach
                             </select>
+                            @endif
                             <button class="btn-dark" style="background-color:#0453A3;" type="submit">Fichar</button>
                         </form>
                     </div>
+                
             </div>
         </div>
         <div class="posicion-btn" style="margin:auto; margin-bottom:3px; margin-top:25px">

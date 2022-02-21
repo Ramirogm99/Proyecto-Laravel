@@ -19,17 +19,17 @@ class FichajeController extends Controller
         session_start();
 
         $workplace_id = $request->centro_id;
+        
 
         $user_id = $_SESSION["user_id"];
         //$fichaje = Fichaje::select("SELECT file_in.* , name , users.id FROM file_in , users WHERE user_id =  ORDER BY file_in.id DESC LIMIT 1");
         $fichaje = DB::table("file_in")
             ->where('user_id', $user_id)
-            ->where('workplace_id', $workplace_id)
-            ->orderByDesc('user_id')
-            ->first(['entry_date', 'departure_date']);
+            ->orderByDesc('id')
+            ->first(['entry_date', 'departure_date', 'id']);
         $fechaActual = date("Y-m-d H:i:s");
 
-            if (isset($fichaje->departure_date)) { // Entrada
+            if ($fichaje->departure_date != "" && isset($fichaje->departure_date)) { 
             $fichaje = array(
                 'entry_date' => $fechaActual,
                 'departure_date' => "",
@@ -37,10 +37,18 @@ class FichajeController extends Controller
                 'workplace_id' => $workplace_id,
             );
             DB::table('file_in')->insert($fichaje);
+            $_SESSION["state"]=1//toca salir
+            ;
 
-        } else { // Salida
+            
 
-            DB::table('file_in')->where('workplace_id', $workplace_id)->update(['departure_date' => $fechaActual]);
+            } else { // Salida
+                $query = Fichaje::find($fichaje->id);
+                $query->departure_date = $fechaActual;
+                $query->save();
+                $_SESSION["state"]=0//toca entrar
+                ;
+
         }
         return redirect()->route('registro');
     }

@@ -22,8 +22,8 @@ Route::get('/', [LoginController::class, 'index'])->name('login');
 Route::post('/inicio', [LoginController::class, 'comprobarUsuarioRegistrado'])->name('login.comprobarUsuario');
 
 
-Route::get('/fichar', [FichajeController::class, 'index'])->name('crear.fichaje');
-Route::put('/fichar', [FichajeController::class, 'fichar'])->name('fichar');
+Route::get('/fichaje', [DashboardController::class, 'fichar'])->name('crear.fichaje');
+Route::post('/fichar', [FichajeController::class, 'fichar'])->name('fichar');
 
 Route::get('/dashboard', [DashboardController::class , 'index'])->name('dashboard');
 Route::get('/salir', [DashboardController::class, 'LogOut'])->name('logout');

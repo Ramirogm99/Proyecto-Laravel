@@ -1,202 +1,197 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins');
-@import url('https://fonts.googleapis.com/css2?family=Road+Rage&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-
-/* CONFIGURACION PÁGINA */
-
-html {
-  background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(168,179,182,.4) 10%,rgba(57,125,144,0) 40%),-moz-linear-gradient(top,  rgba(33,63,72,.25) 0%, rgba(42,186,234,.4) 100%), -moz-linear-gradient(-45deg,  #cbcba9 0%, #2abaea 100%);
-  background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(168,179,182,.4) 10%,rgba(57,125,144,0) 40%), -webkit-linear-gradient(top,  rgba(33,63,72,.25) 0%,rgba(42,186,234,.4) 100%), -webkit-linear-gradient(-45deg,  #cbcba9 0%,#2abaea 100%);
-  background: -o-radial-gradient(0% 100%, ellipse cover, rgba(168,179,182,.4) 10%,rgba(57,125,144,0) 40%), -o-linear-gradient(top,  rgba(33,63,72,.25) 0%,rgba(42,186,234,.4) 100%), -o-linear-gradient(-45deg,  #cbcba9 0%,#2abaea 100%);
-  background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(168,179,182,.4) 10%,rgba(57,125,144,0) 40%), -ms-linear-gradient(top,  rgba(33,63,72,.25) 0%,rgba(42,186,234,.4) 100%), -ms-linear-gradient(-45deg,  #cbcba9 0%,#2abaea 100%);
-  background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(168,179,182,.4) 10%,rgba(57,125,144,0) 40%), linear-gradient(to bottom,  rgba(33,63,72,.25) 0%,rgba(42,186,234,.4) 100%), linear-gradient(135deg,  #cbcba9 0%,#2abaea 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cbcba9', endColorstr='#2abaea',GradientType=1 );
-  box-sizing: border-box;
-  min-height: 100%;
-  position: relative;
-}
-.contenedor{
-	width: 100%; 
-  	height:100%; 
-  
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-}
-
-.fondoramiro{
-  background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(168,179,182,.4) 10%,rgba(57,125,144,0) 40%),-moz-linear-gradient(top,  rgba(33,63,72,.25) 0%, rgba(42,186,234,.4) 100%), -moz-linear-gradient(-45deg,  #cbcba9 0%, #2abaea 100%);
-  background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(168,179,182,.4) 10%,rgba(57,125,144,0) 40%), -webkit-linear-gradient(top,  rgba(33,63,72,.25) 0%,rgba(42,186,234,.4) 100%), -webkit-linear-gradient(-45deg,  #cbcba9 0%,#2abaea 100%);
-  background: -o-radial-gradient(0% 100%, ellipse cover, rgba(168,179,182,.4) 10%,rgba(57,125,144,0) 40%), -o-linear-gradient(top,  rgba(33,63,72,.25) 0%,rgba(42,186,234,.4) 100%), -o-linear-gradient(-45deg,  #cbcba9 0%,#2abaea 100%);
-  background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(168,179,182,.4) 10%,rgba(57,125,144,0) 40%), -ms-linear-gradient(top,  rgba(33,63,72,.25) 0%,rgba(42,186,234,.4) 100%), -ms-linear-gradient(-45deg,  #cbcba9 0%,#2abaea 100%);
-  background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(168,179,182,.4) 10%,rgba(57,125,144,0) 40%), linear-gradient(to bottom,  rgba(33,63,72,.25) 0%,rgba(42,186,234,.4) 100%), linear-gradient(135deg,  #cbcba9 0%,#2abaea 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cbcba9', endColorstr='#2abaea',GradientType=1 );
-  box-sizing: border-box;
-  min-height: 100%;
-  position: relative;
-}
-
-h2 {
-  text-align: center;
-  font-size: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
-  display:inline-block;
-  margin: 40px 8px 10px 8px; 
-  color: #cccccc;
-}
-
-/*CONFIGURACIÓN DEL HEADER*/
-header{
-	box-sizing: border-box;
-	display: flex;
-	justify-content: center;
-	padding: 0; 
-	margin: 0;
-	text-align: center;
-	width: 100%;
-	background-size: cover;
-	background-attachment: fixed;
-	overflow: hidden;
-	border-radius: 0 0 85% 85% / 30%;
-	background: 
-		linear-gradient(rgba(0,0,0,.43), rgba(0,0,0,.43)),
-		url(https://image.shutterstock.com/image-vector/vector-black-geometric-background-design-260nw-1223389576.jpg) no-repeat center,
-		linear-gradient(#222222, #CBCBA9);
-	background-size: cover;
-	
-}
-
-header h1{
-	font-family: 'Permanent Marker', sans-serif;
-	font-size: 40px;
-	color: #FFF;
-	text-shadow: 1px 1px 1px #333;
-}
-
-/*CONFIGURACIÓN DEL FOOTER*/
-footer .piedepagina{
-	background-image: -moz-linear-gradient(top, #cbcba9, #222222); 
-	background-color: #222222; 
-	box-sizing: border-box;
-	padding: 0; 
-	margin: 0;
-	text-align: center;
-	width: 100%;
-	background-size: cover;
-	background-attachment: fixed;
-	overflow: hidden;
-	border-radius: 85% 85% 0 0 / 30%;
-	bottom: 0px;
-}
-
-footer h1{
-	font-family: 'Road Rage', sans-serif;
-  font-weight: lighter;
-	font-size: 20px;
-	height: 30px;
-	color: #FFF;
-	text-shadow: 1px 1px 1px #333;
-	justify-content: center;
-}
-
-/* BOX principal LOGIN */
-
-.login_box {
-  display: flex;
-  align-items: center;
-  flex-direction: column; 
-  width: 100%;
-  padding: 40px;
-}
-
-#box_content {
-  -webkit-border-radius: 10px 10px 10px 10px;
-  border-radius: 10px 10px 10px 10px;
-  background: #fff;
-  width: 90%;
-  position: absolute;
-  max-width: 450px;
-  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
-  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
-  text-align: center;
-}
-
-
-
-/* Log in en negro y con una barra azul debajo */
-
-h2.active {
-  color: #0d0d0d;
-  border-bottom: 2px solid #5fbae9;
-}
-
-
-
-/* FORM TYPOGRAPHY*/
-
-input[type=button], input[type=submit], input[type=reset] {
-  background-color: #56baed;
-  border: none;
-  color: white;
-  padding: 15px 80px;
-  text-align: left;
-  text-decoration: none;
-  display: inline-block;
-  text-transform: uppercase;
-  font-size: 20px;
-  -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
-  box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
-  -webkit-border-radius: 5px 5px 5px 5px;
-  border-radius: 5px 5px 5px 5px;
-  margin: 20px 20px 20px 20px;
-}
-
-input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
-  background-color: #39ace7;
-}
-
-
-input[type=password], input[type=email], input[type=text]{
-  background-color: #f6f6f6;
-  border: none;
-  color: #0d0d0d;
-  padding: 15px 22px;
-  text-align: left;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 5px;
-  width: 85%;
-  border: 2px solid #f6f6f6;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -ms-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-  -webkit-border-radius: 5px 5px 5px 5px;
-  border-radius: 5px 5px 5px 5px;
-}
-
-input[type=text]:focus {
-  background-color: #fff;
-  border-bottom: 2px solid #5fbae9;
-}
-
-input[type=text]:placeholder {
-  color: #cccccc;
-}
-
-
-
-/* OTHERS */
-
-*:focus {
-    outline: none;
-} 
-
-* {
-  box-sizing: border-box;
-}
+    @import url('https://fonts.googleapis.com/css?family=Poppins');
+    @import url('https://fonts.googleapis.com/css2?family=Road+Rage&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+    /* CONFIGURACION PÁGINA */
+    
+    html {
+        background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(168, 179, 182, .4) 10%, rgba(57, 125, 144, 0) 40%), -moz-linear-gradient(top, rgba(33, 63, 72, .25) 0%, rgba(42, 186, 234, .4) 100%), -moz-linear-gradient(-45deg, #cbcba9 0%, #2abaea 100%);
+        background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(168, 179, 182, .4) 10%, rgba(57, 125, 144, 0) 40%), -webkit-linear-gradient(top, rgba(33, 63, 72, .25) 0%, rgba(42, 186, 234, .4) 100%), -webkit-linear-gradient(-45deg, #cbcba9 0%, #2abaea 100%);
+        background: -o-radial-gradient(0% 100%, ellipse cover, rgba(168, 179, 182, .4) 10%, rgba(57, 125, 144, 0) 40%), -o-linear-gradient(top, rgba(33, 63, 72, .25) 0%, rgba(42, 186, 234, .4) 100%), -o-linear-gradient(-45deg, #cbcba9 0%, #2abaea 100%);
+        background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(168, 179, 182, .4) 10%, rgba(57, 125, 144, 0) 40%), -ms-linear-gradient(top, rgba(33, 63, 72, .25) 0%, rgba(42, 186, 234, .4) 100%), -ms-linear-gradient(-45deg, #cbcba9 0%, #2abaea 100%);
+        background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(168, 179, 182, .4) 10%, rgba(57, 125, 144, 0) 40%), linear-gradient(to bottom, rgba(33, 63, 72, .25) 0%, rgba(42, 186, 234, .4) 100%), linear-gradient(135deg, #cbcba9 0%, #2abaea 100%);
+        filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#cbcba9', endColorstr='#2abaea', GradientType=1);
+        box-sizing: border-box;
+        min-height: 100%;
+        position: relative;
+    }
+    
+    .contenedor {
+        width: 100%;
+        height: 100%;
+    }
+    
+    body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+    }
+    
+    .fondoramiro {
+        background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(168, 179, 182, .4) 10%, rgba(57, 125, 144, 0) 40%), -moz-linear-gradient(top, rgba(33, 63, 72, .25) 0%, rgba(42, 186, 234, .4) 100%), -moz-linear-gradient(-45deg, #cbcba9 0%, #2abaea 100%);
+        background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(168, 179, 182, .4) 10%, rgba(57, 125, 144, 0) 40%), -webkit-linear-gradient(top, rgba(33, 63, 72, .25) 0%, rgba(42, 186, 234, .4) 100%), -webkit-linear-gradient(-45deg, #cbcba9 0%, #2abaea 100%);
+        background: -o-radial-gradient(0% 100%, ellipse cover, rgba(168, 179, 182, .4) 10%, rgba(57, 125, 144, 0) 40%), -o-linear-gradient(top, rgba(33, 63, 72, .25) 0%, rgba(42, 186, 234, .4) 100%), -o-linear-gradient(-45deg, #cbcba9 0%, #2abaea 100%);
+        background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(168, 179, 182, .4) 10%, rgba(57, 125, 144, 0) 40%), -ms-linear-gradient(top, rgba(33, 63, 72, .25) 0%, rgba(42, 186, 234, .4) 100%), -ms-linear-gradient(-45deg, #cbcba9 0%, #2abaea 100%);
+        background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(168, 179, 182, .4) 10%, rgba(57, 125, 144, 0) 40%), linear-gradient(to bottom, rgba(33, 63, 72, .25) 0%, rgba(42, 186, 234, .4) 100%), linear-gradient(135deg, #cbcba9 0%, #2abaea 100%);
+        filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#cbcba9', endColorstr='#2abaea', GradientType=1);
+        box-sizing: border-box;
+        min-height: 100%;
+        position: relative;
+    }
+    
+    h2 {
+        text-align: center;
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        display: inline-block;
+        margin: 40px 8px 10px 8px;
+        color: #cccccc;
+    }
+    /*CONFIGURACIÓN DEL HEADER*/
+    
+    header {
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        width: 100%;
+        background-size: cover;
+        background-attachment: fixed;
+        overflow: hidden;
+        border-radius: 0 0 85% 85% / 30%;
+        background: linear-gradient(rgba(0, 0, 0, .43), rgba(0, 0, 0, .43)), url(https://image.shutterstock.com/image-vector/vector-black-geometric-background-design-260nw-1223389576.jpg) no-repeat center, linear-gradient(#222222, #CBCBA9);
+        background-size: cover;
+    }
+    
+    header h1 {
+        font-family: 'Permanent Marker', sans-serif;
+        font-size: 40px;
+        color: #FFF;
+        text-shadow: 1px 1px 1px #333;
+    }
+    /*CONFIGURACIÓN DEL FOOTER*/
+    
+    footer .piedepagina {
+        background-image: -moz-linear-gradient(top, #cbcba9, #222222);
+        background-color: #222222;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        width: 100%;
+        background-size: cover;
+        background-attachment: fixed;
+        overflow: hidden;
+        border-radius: 85% 85% 0 0 / 30%;
+        bottom: 0px;
+    }
+    
+    footer h1 {
+        font-family: 'Road Rage', sans-serif;
+        font-weight: lighter;
+        font-size: 20px;
+        height: 30px;
+        color: #FFF;
+        text-shadow: 1px 1px 1px #333;
+        justify-content: center;
+    }
+    /* BOX principal LOGIN */
+    
+    .login_box {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        padding: 40px;
+    }
+    
+    #box_content {
+        -webkit-border-radius: 10px 10px 10px 10px;
+        border-radius: 10px 10px 10px 10px;
+        background: #fff;
+        width: 90%;
+        position: absolute;
+        max-width: 450px;
+        -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+        box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+        text-align: center;
+    }
+    /* Log in en negro y con una barra azul debajo */
+    
+    h2.active {
+        color: #0d0d0d;
+        border-bottom: 2px solid #5fbae9;
+    }
+    /* FORM TYPOGRAPHY*/
+    
+    input[type=button],
+    input[type=submit],
+    input[type=reset] {
+        background-color: #56baed;
+        border: none;
+        color: white;
+        padding: 15px 80px;
+        text-align: left;
+        text-decoration: none;
+        display: inline-block;
+        text-transform: uppercase;
+        font-size: 20px;
+        -webkit-box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+        box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+        -webkit-border-radius: 5px 5px 5px 5px;
+        border-radius: 5px 5px 5px 5px;
+        margin: 20px 20px 20px 20px;
+    }
+    
+    input[type=button]:hover,
+    input[type=submit]:hover,
+    input[type=reset]:hover {
+        background-color: #39ace7;
+    }
+    
+    input[type=password],
+    input[type=email],
+    input[type=text] {
+        background-color: #f6f6f6;
+        border: none;
+        color: #0d0d0d;
+        padding: 15px 22px;
+        text-align: left;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 5px;
+        width: 85%;
+        border: 2px solid #f6f6f6;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        -webkit-border-radius: 5px 5px 5px 5px;
+        border-radius: 5px 5px 5px 5px;
+    }
+    
+    input[type=text]:focus {
+        background-color: #fff;
+        border-bottom: 2px solid #5fbae9;
+    }
+    
+    input[type=text]:placeholder {
+        color: #cccccc;
+    }
+    /* OTHERS */
+    
+    *:focus {
+        outline: none;
+    }
+    
+    * {
+        box-sizing: border-box;
+    }
+    
+    .contenedor-fichaje {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }

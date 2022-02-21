@@ -31,4 +31,4 @@ Route::get('/salir', [DashboardController::class, 'LogOut'])->name('logout');
 Route::get('/historial', [HistorialController::class , 'index'])->name('registro');
 
 Route::get('/editar', [UsuarioController::class, 'edit'])->name('usuario.edit');
-Route::put('/editar', [UsuarioController::class, 'update'])->name('usuario.update');
+Route::put('/editar', [UsuarioController::class, 'updateUsuario'])->name('usuario.update');

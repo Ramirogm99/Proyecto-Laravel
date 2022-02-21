@@ -22,18 +22,17 @@ class UsuarioController extends Controller
      * Devuelve el método "index($user_id)" del dashboard
      */
 
-    public function update(){
+    public function updateUsuario(Request $request){
         session_start();
-        $user_name=$_POST('$user_name');
-        DB::table('users')->where('id', $_SESSION["user_id"])->update(['user' => $user_name]);
+        DB::table('users')->where('id', $_SESSION["user_id"])->update(['user' => $request->name]);
         return redirect()->route('dashboard');
     }
 
-    public function guardarUsuario($datosUsuario)
+    public function guardarUsuario($user_name)
     {
         session_start();
-        DB::table('users')->where('id', $_SESSION["user_id"])->update(['user' => $datosUsuario->user]);
-        return DashboardController::index($datosUsuario->id);
+        DB::table('users')->where('id', $_SESSION["user_id"])->update(['user' => $user_name->user]);
+        return DashboardController::index($user_name->id);
     }
 
     /**

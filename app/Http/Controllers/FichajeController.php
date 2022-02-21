@@ -29,7 +29,7 @@ class FichajeController extends Controller
             ->first(['entry_date', 'departure_date']);
         $fechaActual = date("Y-m-d H:i:s");
 
-            if (!empty($fichaje->departure_date)) { // Entrada
+            if (isset($fichaje->departure_date)) { // Entrada
             $fichaje = array(
                 'entry_date' => $fechaActual,
                 'departure_date' => "",

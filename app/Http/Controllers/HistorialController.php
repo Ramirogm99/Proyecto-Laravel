@@ -16,6 +16,7 @@ class HistorialController extends Controller
     public function index()
     {
         session_start();
+        if(isset($_SESSION["logged"])){
         $user_id = $_SESSION["user_id"];
         
         $fichajes = DB::table('file_in')
@@ -28,6 +29,11 @@ class HistorialController extends Controller
             ->get();
     
         return view('registro', ['fichajes'=>$fichajes]);
+        }
+        else{
+            session_destroy();
+            return redirect()->route('login');
+        }
     }
 
     /**

@@ -11,10 +11,16 @@ class UsuarioController extends Controller
     public function edit()
     {   
         session_start();
+        if(isset($_SESSION["logged"])){
         $user_id = $_SESSION["user_id"];
         $usuario = DB::table('users')->where('id', $user_id)->first(['user']);
         $_SESSION["user_name"]=$usuario->user;
         return view('editarUsuario', ['user_name'=>$_SESSION['user_name']]);
+        }
+        else{
+            session_destroy();
+            return redirect()->route('login');
+        }
     }
     
     /**
@@ -25,6 +31,7 @@ class UsuarioController extends Controller
     public function updateUsuario(Request $request){
         session_start();
         DB::table('users')->where('id', $_SESSION["user_id"])->update(['user' => $request->name]);
+            $_SESSION['user_name'] = $request->name;
         return redirect()->route('dashboard');
     }
 

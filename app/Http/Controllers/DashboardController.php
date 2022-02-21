@@ -14,7 +14,11 @@ class DashboardController extends Controller
      */
     public static function index()
     {
+
         session_start();
+        if(isset($_SESSION["logged"])){
+
+        
         $user_id = $_SESSION["user_id"];
         
         //$usuarios = Fichaje::join('users','users.user_id', '=' ,'file_in.user_id')->where('user_id', $user_id)->orderByDesc("entry_date")->take(5)->get(['users.id','workplaces.id','entry_date','departure_date']);
@@ -28,6 +32,11 @@ class DashboardController extends Controller
             ->get();
             
         return view('dashboard', ['fichajes'=>$fichajes], ['user_name'=>$_SESSION['user_name']],['user_id'=>$_SESSION['user_id']]);
+        }else{
+            session_destroy();
+            return redirect()->route('login');
+
+        }
     }
 
     /**
@@ -44,10 +53,12 @@ class DashboardController extends Controller
     /**
      * Devuelve una vista con el nombre de todos los centros
      */
+  
+
     public function fichar()
     {
         session_start();
-
+        if(isset($_SESSION["logged"])){
         $user_id = $_SESSION["user_id"];
         //$fichaje = Fichaje::select("SELECT file_in.* , name , users.id FROM file_in , users WHERE user_id =  ORDER BY file_in.id DESC LIMIT 1");
         $fichaje = DB::table("file_in")
@@ -65,7 +76,11 @@ class DashboardController extends Controller
 
         
         $centros = DB::table('workplaces')->select(['name','id'])->get();
-        return view('fichaje', ['centros' => $centros], ['state' => $_SESSION["state"]]);
+        return view('fichaje', ['centros' => $centros], ['state' => $_SESSION["state"]]);}
+        else{
+            session_destroy();
+            return redirect()->route('login');
+        }
     }
 
     /**
